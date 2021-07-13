@@ -15,12 +15,12 @@
     <div class="edit-user-form">
       <%= form_with model: @user, url: user_path(@user), local:true do |f| %>
         <p>Name</p>
-        <%= f.text_field :name, class: "edit-user-formfield" %>
+        <%= f.text_field :name, class: "edit-user-formfield form-control" %>
         <p>Image</p>
-        <%= f.attachment_field :profile_image %>
+        <%= f.attachment_field :profile_image, class: "edit-user-formfield" %>
         <p>Introduction</p>
-        <%= f.text_area :introduction, class: "edit-user-formfield" %>
-        <%= f.submit 'Update User', class: "btn btn-success btn-block" %>
+        <%= f.text_area :introduction, class: "edit-user-formfield form-control" %>
+        <%= f.submit 'Update User', class: "btn btn-secondary btn-block" %>
       <% end %>
     </div>
   </div>

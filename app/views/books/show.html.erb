@@ -2,10 +2,10 @@
   <%= render "layouts/sidebar" %>
   <div class="col-md-8 offset-md-1">
     <h2>Book detail</h2>
-    <table>
+    <table class="table">
         <tr>
           <td>
-            <%= attachment_image_tag @book.user, :profile_image, fallback: "no_image.jpg", size:'40x40', class: "mainbar-profile-image" %>
+            <%= attachment_image_tag @book.user, :profile_image, fallback: "no_image.jpg", size:'40x40', class: "mainbar-profile-image" %><br>
             <%= link_to @book.user.name, user_path(@book.user) %>
           </td>
           <td>

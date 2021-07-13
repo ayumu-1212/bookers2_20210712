@@ -21,12 +21,17 @@
   padding: 0;
 }
 
+.navbar-userable {
+  margin-bottom: 30px;
+}
+
 .welcome-to-bookers {
   text-align: center;
 }
 
 .copy-right {
   text-align: center;
+  margin-top: 50px;
 }
 
 .new-book-title {
@@ -39,6 +44,7 @@
 
 .new-book-formfield {
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .notice-message {
@@ -47,4 +53,8 @@
 
 .error-messages {
   color: red;
+}
+
+.edit-user-formfield {
+  margin-bottom: 10px;
 }
