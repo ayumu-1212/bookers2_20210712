@@ -1,7 +1,9 @@
 <div class="col-md-3">
   <div class="row">
     <h3>User Info</h3>
-    <%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size:'100x100', class: "sidebar-profile-image" %>
+    <div class="sidebar-image-box">
+      <%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size:'100x100', class: "sidebar-profile-image" %>
+    </div>
     <table class="table">
       <tr>
         <th>name</th>

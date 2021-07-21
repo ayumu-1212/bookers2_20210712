@@ -8,6 +8,7 @@
           <th scope="col"></th>
           <th scope="col">Title</th>
           <th scope="col">Opinion</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -22,6 +23,21 @@
             </td>
             <td>
               <%= book.body %>
+            </td>
+            <td>
+              <% if Favorite.find_by(user_id: current_user.id, book_id: book.id).present? %>
+                <div>
+                  <%= link_to favorites_destroy_path(user_id: current_user.id, book_id: book.id), method: :delete, class: "favorited-heart" do %>
+                  <i class="fas fa-heart"></i><%= Favorite.where(book_id: book.id).length %>
+                  <% end %>
+                </div>
+              <% else %>
+                <div>
+                  <%= link_to favorites_create_path(user_id: current_user.id, book_id: book.id), method: :post, class: "no-favorite-heart" do %>
+                  <i class="fas fa-heart"></i><%= Favorite.where(book_id: book.id).length %>
+                  <% end %>
+                </div>
+              <% end %>
             </td>
           </tr>
         <% end %>
