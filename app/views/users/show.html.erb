@@ -28,13 +28,13 @@
               <% if Favorite.find_by(user_id: current_user.id, book_id: book.id).present? %>
                 <div>
                   <%= link_to favorites_destroy_path(user_id: current_user.id, book_id: book.id), method: :delete, class: "favorited-heart" do %>
-                  <i class="fas fa-heart"></i><%= Favorite.where(book_id: book.id).length %>
+                  <i class="fas fa-heart"></i><%= book.favorites.length %>
                   <% end %>
                 </div>
               <% else %>
                 <div>
                   <%= link_to favorites_create_path(user_id: current_user.id, book_id: book.id), method: :post, class: "no-favorite-heart" do %>
-                  <i class="fas fa-heart"></i><%= Favorite.where(book_id: book.id).length %>
+                  <i class="fas fa-heart"></i><%= book.favorites.length.length %>
                   <% end %>
                 </div>
               <% end %>
